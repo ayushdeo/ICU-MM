@@ -1,0 +1,88 @@
+import pandas as pd
+from pathlib import Path
+
+RAW = Path("data/raw/mimiciv")
+OUT = Path("data/comb")
+OUT.mkdir(parents=True, exist_ok=True)
+
+# -----------------------------
+# ItemIDs of interest
+# -----------------------------
+VENT_MODE_ITEMIDS = [223848]
+OXYGEN_DEVICE_ITEMIDS = [223834, 226732]
+FIO2_ITEMIDS = [223835]
+
+RESP_ITEMIDS = set(
+    VENT_MODE_ITEMIDS
+    + OXYGEN_DEVICE_ITEMIDS
+    + FIO2_ITEMIDS
+)
+
+print(f"Tracking {len(RESP_ITEMIDS)} respiratory itemids")
+
+# -----------------------------
+# Load cohort ICU stays
+# -----------------------------
+cohort = pd.read_csv(OUT / "cohort.csv")
+cohort_stay_ids = set(cohort["stay_id"].unique())
+
+print(f"Filtering to {len(cohort_stay_ids)} ICU stays")
+
+# -----------------------------
+# Load item dictionary
+# -----------------------------
+d_items = pd.read_csv(RAW / "d_items.csv")
+d_items = d_items[["itemid", "label"]]
+
+# -----------------------------
+# Output setup
+# -----------------------------
+out_file = OUT / "respiratory_chartevents.csv"
+first_chunk = True
+chunksize = 1_000_000
+
+# -----------------------------
+# Chunked processing
+# -----------------------------
+for chunk in pd.read_csv(
+    RAW / "chartevents.csv",
+    chunksize=chunksize
+):
+    # Filter to cohort ICU stays
+    chunk = chunk[chunk["stay_id"].isin(cohort_stay_ids)]
+
+    # Filter to respiratory itemids
+    chunk = chunk[chunk["itemid"].isin(RESP_ITEMIDS)]
+
+    if chunk.empty:
+        continue
+
+    # Merge labels
+    chunk = chunk.merge(
+        d_items,
+        on="itemid",
+        how="left"
+    )
+
+    # Keep relevant columns
+    chunk = chunk[[
+        "subject_id",
+        "stay_id",
+        "charttime",
+        "itemid",
+        "label",
+        "value"
+    ]]
+
+    # Append
+    chunk.to_csv(
+        out_file,
+        mode="w" if first_chunk else "a",
+        index=False,
+        header=first_chunk
+    )
+
+    first_chunk = False
+    print(f"Appended {len(chunk)} respiratory rows")
+
+print("]respiratory_chartevents.csv build complete")

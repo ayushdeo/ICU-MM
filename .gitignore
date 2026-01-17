@@ -1,0 +1,12 @@
+# Raw PhysioNet data (never commit)
+data/raw/
+
+# Large intermediate files
+*.csv.gz
+
+# Python cache
+__pycache__/
+*.pyc
+
+.DS_Store
+.vscode/
