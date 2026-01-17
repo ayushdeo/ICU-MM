@@ -18,6 +18,16 @@ comb/
 ├── respiratory_procedureevents.csv
 └── README.md
 
+## Downloading Processed Data
+
+The CSV files expected in this directory are hosted externally due to
+GitHub file size limits.
+
+Download them from:
+https://drive.google.com/drive/folders/1f2BID6N4WFFaeZdBwUW_KKtSYHURnw0F?usp=sharing
+
+After downloading, place all files directly in this folder.
+
 ---
 
 ## cohort.csv (MASTER TABLE)

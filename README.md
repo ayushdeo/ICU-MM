@@ -25,3 +25,16 @@ All data builds are reproducible via scripts in `scripts/`.
 **IMP**
 This repository does not include large MIMIC-derived datasets.
 To reproduce data/comb/\*.csv, place raw MIMIC-IV files under data/raw/ (ignored by git) and run the build scripts in scripts/.
+
+## Processed Data Access
+
+Due to GitHub file size limits and PhysioNet data usage requirements,
+processed MIMIC-IV datasets are not stored directly in this repository.
+
+**Processed ICU-MM datasets (Google Drive)**  
+https://drive.google.com/drive/folders/1f2BID6N4WFFaeZdBwUW_KKtSYHURnw0F?usp=sharing
+
+### How to use
+
+1. Download all CSV files from the Google Drive link above
+2. Place them under the following directory structure:
