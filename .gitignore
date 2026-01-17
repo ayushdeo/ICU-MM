@@ -3,6 +3,8 @@ data/raw/
 
 # Large intermediate files
 *.csv.gz
+# Processed data (too large for GitHub)
+data/comb/*.csv
 
 # Python cache
 __pycache__/
