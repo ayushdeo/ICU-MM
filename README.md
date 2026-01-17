@@ -1,7 +1,5 @@
 # ICU-MM
 
-<<<<<<< HEAD
-
 ICU-MM is a multimodal ICU research project built on MIMIC-IV and
 MIMIC-CXR. This repository contains data preprocessing pipelines
 and processed structured datasets.
@@ -23,3 +21,7 @@ ICU_MM/
 4. (Later) Add vitals and imaging
 
 All data builds are reproducible via scripts in `scripts/`.
+
+**IMP**
+This repository does not include large MIMIC-derived datasets.
+To reproduce data/comb/\*.csv, place raw MIMIC-IV files under data/raw/ (ignored by git) and run the build scripts in scripts/.
