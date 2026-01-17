@@ -6,23 +6,23 @@ and processed structured datasets.
 
 ## Project Structure
 
-ICU_MM/
-├── data/
-│ ├── raw/
-│ │ └── mimiciv/ # PhysioNet data (not tracked)
-│ └── comb/ # Processed structured data (external)
-│ ├── README.md
-│ └── data_dictionary.md
-├── scripts/ # Data build scripts
-│ ├── build_cohort.py
-│ ├── build_labs.py
-│ ├── build_prescriptions.py
-│ ├── build_respiratory_chartevents.py
-│ ├── build_respiratory_procedureevents.py
-│ └── build_respiratory_failure_labels.py
-├── .gitignore
-├── LICENSE
-└── README.md
+    ICU_MM/
+    ├── data/
+    │   ├── raw/
+    │   │   └── mimiciv/                # PhysioNet data (not tracked)
+    │   └── comb/                      # Processed structured data (external)
+    │       ├── README.md
+    │       └── data_dictionary.md
+    ├── scripts/                       # Data build scripts
+    │   ├── build_cohort.py
+    │   ├── build_labs.py
+    │   ├── build_prescriptions.py
+    │   ├── build_respiratory_chartevents.py
+    │   ├── build_respiratory_procedureevents.py
+    │   └── build_respiratory_failure_labels.py
+    ├── .gitignore
+    ├── LICENSE
+    └── README.md
 
 ## Data Build Order
 
