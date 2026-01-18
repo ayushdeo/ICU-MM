@@ -9,14 +9,14 @@ Raw PhysioNet data is **not** included in this repository.
 
 ## Contents
 
-comb/
-├── cohort.csv
-├── labs.csv
-├── prescriptions.csv
-├── respiratory_chartevents.csv
-├── respiratory_failurelabels.csv
-├── respiratory_procedureevents.csv
-└── README.md
+    comb/
+    ├── cohort.csv
+    ├── labs.csv
+    ├── prescriptions.csv
+    ├── respiratory_chartevents.csv
+    ├── respiratory_procedureevents.csv
+    ├── respiratory_failure_labels.csv
+    └── README.md
 
 ## Downloading Processed Data
 
