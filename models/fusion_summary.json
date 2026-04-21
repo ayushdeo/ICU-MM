@@ -1,0 +1,50 @@
+{
+  "fusion_model": "LogisticRegression + PCA",
+  "n_samples": 552,
+  "n_train": 338,
+  "n_val": 96,
+  "n_test": 118,
+  "feature_dims": {
+    "structured": 179,
+    "nlp_pca": 20,
+    "cxr_pca": 20,
+    "total_fused": 219
+  },
+  "pca_variance_explained": {
+    "nlp_20_dims": 0.7013,
+    "cxr_20_dims": 0.9853
+  },
+  "val_auroc": 0.8531,
+  "test_auroc": 0.8549,
+  "test_auprc": 0.856,
+  "ablation": {
+    "Structured only": {
+      "val_auroc": 0.8964,
+      "test_auroc": 0.8636
+    },
+    "NLP radiology only": {
+      "val_auroc": 0.5728,
+      "test_auroc": 0.5358
+    },
+    "CXR (BioViL) only": {
+      "val_auroc": 0.5406,
+      "test_auroc": 0.638
+    },
+    "Structured + NLP": {
+      "val_auroc": 0.8808,
+      "test_auroc": 0.8531
+    },
+    "Structured + CXR": {
+      "val_auroc": 0.8884,
+      "test_auroc": 0.87
+    },
+    "NLP + CXR": {
+      "val_auroc": 0.5312,
+      "test_auroc": 0.5684
+    },
+    "All three \u2014 fusion (PCA)": {
+      "val_auroc": 0.8531,
+      "test_auroc": 0.8549
+    }
+  }
+}
