@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="ICU-MM Multimodal ICU Risk Prediction">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05070d"/><stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f85149"/><stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <style>
+      .sans { font-family: "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: Consolas, Menlo, Monaco, monospace; }
+    </style>
+  </defs>
+  <rect width="1200" height="300" rx="20" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+
+  <!-- ECG heartbeat motif -->
+  <polyline points="950,150 985,150 1000,150 1010,110 1025,190 1040,80 1055,150 1080,150 1095,150 1105,130 1120,170 1135,150 1170,150"
+            fill="none" stroke="#f85149" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+
+  <text x="64" y="112" class="sans" font-size="44" font-weight="700" fill="#e6edf3">ICU-MM — Multimodal ICU Risk</text>
+  <text x="66" y="156" class="mono" font-size="19" fill="#9fb0c3">Respiratory-failure prediction fusing labs, radiology text</text>
+  <text x="66" y="182" class="mono" font-size="19" fill="#9fb0c3">and chest X-rays on MIMIC-IV / MIMIC-CXR</text>
+
+  <g class="mono" font-size="15" fill="#7d8590">
+    <text x="66" y="234">ClinicalBERT</text><text x="210" y="234" fill="#30363d">|</text>
+    <text x="230" y="234">BioViL (CXR)</text><text x="370" y="234" fill="#30363d">|</text>
+    <text x="390" y="234">scikit-learn</text><text x="520" y="234" fill="#30363d">|</text>
+    <text x="540" y="234">SHAP</text><text x="600" y="234" fill="#30363d">|</text>
+    <text x="620" y="234">Streamlit</text>
+  </g>
+  <text x="66" y="276" class="mono" font-size="13" fill="#484f58">Test AUROC 0.855 · full modality ablation · github.com/ayushdeo</text>
+</svg>
